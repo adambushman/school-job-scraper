@@ -17,7 +17,7 @@ from __future__ import annotations
 from typing import Any
 
 from ..models import District, JobPosting
-from .base import JsonFetcher, parse_close_date, parse_date, strip_html
+from .base import JsonFetcher, extract_summary, parse_close_date, parse_date
 
 SITE_ROOT = "https://dsdjobs.net"
 # The board caps page size at 50 regardless of what is requested.
@@ -77,7 +77,9 @@ class DavisSource:
         data = payload.get("Data") if isinstance(payload, dict) else None
         if not isinstance(data, dict):
             return job
-        description = strip_html(data.get("description")) or strip_html(data.get("summary"))
+        description = extract_summary(data.get("description")) or extract_summary(
+            data.get("summary")
+        )
         return JobPosting(
             district=job.district,
             job_id=job.job_id,

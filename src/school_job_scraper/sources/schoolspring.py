@@ -16,7 +16,7 @@ from __future__ import annotations
 from typing import Any
 
 from ..models import District, JobPosting
-from .base import JsonFetcher, parse_close_date, parse_date, strip_html
+from .base import JsonFetcher, extract_summary, parse_close_date, parse_date
 
 API_ROOT = "https://api.schoolspring.com/api"
 PAGE_SIZE = 200
@@ -78,7 +78,7 @@ class SchoolSpringSource:
             url=job.url,
             job_type=str(job_type) if job_type else None,
             category=job.category,
-            description=strip_html(info.get("jobDescription")),
+            description=extract_summary(info.get("jobDescription")),
             posted_date=job.posted_date or parse_date(info.get("displayDate")),
             close_date=parse_close_date(info.get("closeDate") or info.get("applicationDeadline")),
             is_internal=job.is_internal,

@@ -241,3 +241,116 @@ def test_far_future_close_dates_are_treated_as_open_until_filled() -> None:
     assert parse_close_date("2050-01-01T06:00:00") is None
     assert parse_close_date("2026-10-24T05:59:00") == date(2026, 10, 24)
     assert parse_close_date(None) is None
+
+
+# --------------------------------------------------------------------------
+# Description summaries: skip the boilerplate, keep the prose
+# --------------------------------------------------------------------------
+
+
+def test_summary_skips_weber_contract_boilerplate() -> None:
+    """Weber front-loads payroll metadata before any prose about the job."""
+    from school_job_scraper.sources.base import extract_summary
+
+    raw = load("schoolspring_weber_detail.json")["value"]["jobInfo"]["jobDescription"]
+    summary = extract_summary(raw) or ""
+
+    # The label/value preamble must be gone...
+    assert not summary.startswith("Title:")
+    for boilerplate in ("182 Days", "FLSA Status", "Benefits-Eligible", "Salary Schedule"):
+        assert boilerplate not in summary, f"{boilerplate!r} is boilerplate"
+    # ...and the first thing a reader actually needs must lead.
+    assert summary.startswith("Candidates must be fluent in Chinese")
+
+
+def test_summary_drops_the_application_process_note() -> None:
+    """'Application Note: ...' is process boilerplate repeated on every posting."""
+    from school_job_scraper.sources.base import extract_summary
+
+    raw = load("schoolspring_weber_detail.json")["value"]["jobInfo"]["jobDescription"]
+    assert "minimum of five working days" not in (extract_summary(raw) or "")
+
+
+def test_summary_keeps_davis_plain_text_prose() -> None:
+    """Davis sends plain text in blank-line-separated blocks, not HTML."""
+    from school_job_scraper.sources.base import extract_summary
+
+    raw = load("davis_detail.json")["Data"]["description"]
+    summary = extract_summary(raw) or ""
+    assert "BASKETBALL" in summary.upper()
+    assert "Looking for an individual" in summary
+
+
+def test_summary_keeps_prose_that_merely_contains_a_colon() -> None:
+    """A long lead-in ending in a colon is prose, not a metadata label."""
+    from school_job_scraper.sources.base import extract_summary
+
+    raw = "The following position is available at Syracuse Junior High:\n\nReal detail here."
+    summary = extract_summary(raw) or ""
+    assert summary.startswith("The following position is available")
+
+
+def test_summary_falls_back_when_everything_looks_like_metadata() -> None:
+    """Better to show the labels than to show nothing at all."""
+    from school_job_scraper.sources.base import extract_summary
+
+    raw = "<p><strong>Title:</strong> Elementary Teacher</p><p><strong>Hours:</strong> 8.0</p>"
+    summary = extract_summary(raw) or ""
+    assert "Elementary Teacher" in summary
+
+
+def test_summary_handles_missing_and_empty_descriptions() -> None:
+    from school_job_scraper.sources.base import extract_summary
+
+    assert extract_summary(None) is None
+    assert extract_summary("") is None
+    assert extract_summary("<p>&nbsp;</p>\r\n<hr />") is None
+
+
+def test_enrich_uses_the_summary_not_the_raw_dump() -> None:
+    source = SchoolSpringSource(
+        district=District.WEBER,
+        domain="wsd.schoolspring.com",
+        fetch=fetcher_for(
+            {
+                "GetPagedJobsWithSearch": load("schoolspring_wsd_list.json"),
+                "/api/Jobs/5958993": load("schoolspring_weber_detail.json"),
+            }
+        ),
+    )
+    job = next(j for j in source.list_postings() if j.job_id == "5958993")
+    enriched = source.enrich(job)
+    assert (enriched.description or "").startswith("Candidates must be fluent")
+    # The 2050-01-01 sentinel must still be discarded.
+    assert enriched.close_date is None
+
+
+def test_summary_skips_weber_standing_notes_and_section_headings() -> None:
+    """Weber repeats the same process note, policy note and EEO notice verbatim.
+
+    On this posting the "Application Note:" label carries an inline value, so
+    the standing note that follows is not swallowed as a label value the way it
+    is on other postings - it has to be recognised on its own.
+    """
+    from school_job_scraper.sources.base import extract_summary
+
+    raw = load("schoolspring_weber_temp_detail.json")["value"]["jobInfo"]["jobDescription"]
+    summary = extract_summary(raw) or ""
+
+    assert summary.startswith("Under the direction of the school principal")
+    for standing in (
+        "will remain open until filled",
+        "In accordance with Weber School District Policy",
+        "has the right to revise this position description",
+        "EQUAL OPPORTUNITY",
+    ):
+        assert standing not in summary, f"{standing!r} is standing boilerplate"
+    assert not summary.startswith("Job Overview")
+
+
+def test_summary_keeps_section_headings_that_are_not_boilerplate() -> None:
+    """Only the known section headings are dropped, not any short line."""
+    from school_job_scraper.sources.base import extract_summary
+
+    raw = "ASSISTANT GIRLS BASKETBALL COACH\n\nLooking for someone with experience."
+    assert "BASKETBALL" in (extract_summary(raw) or "")

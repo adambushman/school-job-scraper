@@ -126,3 +126,21 @@ def test_description_is_truncated_rather_than_dumped() -> None:
     posting = job(description="word " * 400)
     body = render_text(ScanResult(postings=[posting], scanned=10))
     assert len(body) < 3000
+
+
+# --------------------------------------------------------------------------
+# Closing dates
+# --------------------------------------------------------------------------
+
+
+def test_bodies_say_open_until_filled_when_there_is_no_closing_date() -> None:
+    result = ScanResult(postings=[job(close_date=None)], scanned=10)
+    assert "Open until filled" in render_text(result)
+    assert "Open until filled" in render_html(result)
+
+
+def test_bodies_prefer_a_real_closing_date_over_the_label() -> None:
+    result = ScanResult(postings=[job(close_date=date(2026, 10, 30))], scanned=10)
+    text = render_text(result)
+    assert "Oct 30, 2026" in text
+    assert "Open until filled" not in text

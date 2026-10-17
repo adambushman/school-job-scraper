@@ -52,6 +52,16 @@ def _format_date(value: date) -> str:
     return value.strftime("%b %d, %Y")
 
 
+OPEN_UNTIL_FILLED = "Open until filled"
+
+
+def _close_label(posting: JobPosting) -> str:
+    """Boards leave the closing date off a posting that stays open until filled."""
+    if posting.close_date is None:
+        return OPEN_UNTIL_FILLED
+    return _format_date(posting.close_date)
+
+
 def _shorten(text: str, limit: int = DESCRIPTION_LIMIT) -> str:
     collapsed = " ".join(text.split())
     if len(collapsed) <= limit:
@@ -87,8 +97,7 @@ def render_text(result: ScanResult) -> str:
                 lines.append(f"* {posting.title}{label}")
                 if posting.employer:
                     lines.append(f"  School:  {posting.employer}")
-                if posting.close_date:
-                    lines.append(f"  Closes:  {_format_date(posting.close_date)}")
+                lines.append(f"  Closes:  {_close_label(posting)}")
                 if posting.description:
                     lines.append(f"  {_shorten(posting.description)}")
                 lines.append(f"  Apply:   {posting.url}")
@@ -175,7 +184,9 @@ def _render_posting_html(posting: JobPosting) -> str:
     if posting.employer:
         meta.append(_esc(posting.employer))
     if posting.close_date:
-        meta.append(f"closes {_format_date(posting.close_date)}")
+        meta.append(f"Closes {_format_date(posting.close_date)}")
+    else:
+        meta.append(OPEN_UNTIL_FILLED)
     meta_html = (
         f'<div style="color:#555;font-size:13px;margin:2px 0 6px;">{" &middot; ".join(meta)}</div>'
         if meta

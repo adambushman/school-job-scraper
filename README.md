@@ -133,7 +133,20 @@ Things that cost time to work out, worth not rediscovering:
 - Ogden tags every posting `[LIC####]` (licensed) or `[ESP####]` (support
   professional), which is nearly free precision.
 - Weber marks "open until filled" roles with a close date of 2050-01-01. That
-  sentinel is discarded rather than shown as a deadline.
+  sentinel is discarded, and a posting with no closing date is reported as
+  "Open until filled" rather than left blank.
+- Descriptions need pruning before they are worth emailing. Weber opens every
+  posting with a block of `Label: value` payroll metadata (title, contract
+  days, salary schedule, FLSA status), then a standing note about the hiring
+  process, then its template's section headings. `extract_summary` drops all
+  three so the first sentence a reader sees is about the actual job. The
+  standing notes and section headings it recognises are listed in
+  `sources/base.py`; if a district changes that wording, a stale phrase shows
+  up as boilerplate leading the snippet again.
+- The `Application Note:` label sometimes carries an inline value
+  (`***EMERGENCY HIRE***`) and sometimes has its text on the following line.
+  Both shapes have to be handled, which is why bare labels swallow the block
+  after them.
 - Filtering runs twice on purpose: the listing payload carries only title,
   school and date, which rejects ~120 of Weber's 129 postings with no extra
   request. Only survivors get a detail lookup, whose `jobTypeName` is
