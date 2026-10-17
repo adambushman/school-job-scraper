@@ -1,0 +1,30 @@
+# Installed by deploy/install.sh, which fills in @USER@ and @DIR@.
+# Edit the copy in /etc/systemd/system only for quick experiments - rerun the
+# installer to pick up changes made here.
+[Unit]
+Description=Scan Utah school district boards for full-time elementary teacher openings
+Documentation=https://github.com/REPLACE/school-job-scraper
+Wants=network-online.target
+# network-online so DNS is up; time-sync so a Pi with no RTC does not run
+# against a bogus clock on the first boot after a power cut.
+After=network-online.target time-sync.target
+
+[Service]
+Type=oneshot
+User=@USER@
+WorkingDirectory=@DIR@
+# Read the settings directly rather than relying on the working directory,
+# which is what the app's own .env loader depends on. Real environment
+# variables win over the file, so the two cannot disagree.
+EnvironmentFile=@DIR@/.env
+ExecStart=@DIR@/.venv/bin/python -m school_job_scraper.main
+TimeoutStartSec=10min
+# The scan writes nothing to disk, so it can run against a read-only system.
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true

@@ -1,0 +1,17 @@
+# Installed by deploy/install.sh.
+[Unit]
+Description=Daily scan for full-time elementary teacher openings
+
+[Timer]
+# Daily. For weekdays only - the districts rarely post at a weekend - use
+# "Mon-Fri 06:30" instead, but note that with SEND_WHEN_EMPTY=true you then
+# lose the weekend "nothing today" email that proves the job still runs.
+OnCalendar=*-*-* 06:30
+# Run a scan that was missed because the machine was off. Plain cron silently
+# skips those, which on a Raspberry Pi is the common case.
+Persistent=true
+# Don't hit three public job boards at exactly the same second every day.
+RandomizedDelaySec=5m
+
+[Install]
+WantedBy=timers.target

@@ -70,18 +70,81 @@ By default nothing is sent on a day with no matches. Set `SEND_WHEN_EMPTY=true`
 (or pass `--send-when-empty`) if you would rather get a daily "nothing today"
 note as proof the job ran.
 
-## Scheduling
+## Deployment and scheduling
 
-The script is a single idempotent command, so plain cron is enough. To run at
-6:30am daily:
+A systemd timer, installed by `deploy/install.sh`. The repo ships the two units
+and the installer fills in the checkout path and the service user, so there is
+nothing to hand-edit:
 
-```cron
-30 6 * * * cd /home/adam-bushman/AllProjects/school-job-scraper && /usr/bin/python3 -m school_job_scraper.main >> /var/tmp/school-job-scraper.log 2>&1
+```bash
+sudo deploy/install.sh
 ```
 
-Cron runs with a minimal environment, so either keep using the `.env` file (it
-is read relative to the working directory, hence the `cd`) or set the variables
-in the crontab itself. A non-zero exit status means the email could not be sent.
+It refuses to install until the virtualenv and `.env` are both in place and
+readable by the service user, which are the two things that otherwise fail
+silently at 6:30am. Re-run it any time the units change; it is idempotent.
+
+```bash
+sudo systemctl start school-job-scraper.service   # one run now, sends real mail
+journalctl -u school-job-scraper -n 50            # what it did
+systemctl list-timers school-job-scraper.timer    # when it next fires
+```
+
+Change the schedule by editing `OnCalendar` in
+`deploy/school-job-scraper.timer`, then re-running the installer.
+
+### Setting up on a Raspberry Pi
+
+```bash
+sudo apt update && sudo apt install -y git python3 python3-venv
+
+sudo mkdir -p /opt/school-job-scraper
+sudo chown "$USER" /opt/school-job-scraper
+git clone <remote> /opt/school-job-scraper
+cd /opt/school-job-scraper
+
+python3 -m venv .venv
+.venv/bin/pip install -e .
+.venv/bin/python -m school_job_scraper.main --dry-run   # no SMTP needed
+
+cp /path/to/.env .                                       # not in git
+chmod 600 .env
+sudo deploy/install.sh
+```
+
+`/opt` rather than a home directory so the service is not tied to a login
+account, and survives a reimage of `/home`.
+
+Four things specific to a Pi, all of which the units or the steps above handle:
+
+- **The virtualenv is not optional.** Pi OS Bookworm marks the system Python as
+  externally managed (PEP 668), so a system-wide `pip install` fails. Only
+  `requests` is needed and it is pure Python, so no compiler or `-dev` packages
+  are required.
+- **Check the timezone.** An unconfigured Pi runs UTC, so a 6:30am job fires at
+  11:30pm local. `sudo timedatectl set-timezone America/Denver`.
+- **Missed runs are the normal case.** Pis get unplugged, and anything before a
+  Pi 5 has no RTC, so the clock is wrong at boot until NTP syncs. The timer sets
+  `Persistent=true` to catch up a missed run and waits on `time-sync.target` so
+  it never fires against a bogus clock. Cron does neither.
+- **Logs go to journald**, which rotates and size-caps them. Appending to a file
+  on an SD card grows without bound.
+
+Gmail's app password is shown in four space-separated groups, but the password
+is the 16 characters without the spaces - SMTP sends the literal string, so
+leaving them in fails authentication.
+
+### Cron instead
+
+If you would rather not use systemd, the script is a single idempotent command:
+
+```cron
+30 6 * * * cd /opt/school-job-scraper && .venv/bin/python -m school_job_scraper.main 2>&1 | logger -t school-job-scraper
+```
+
+The `cd` matters: `.env` is read relative to the working directory. Piping to
+`logger` keeps the output in syslog rather than an ever-growing file. Cron will
+not catch up a run missed while the machine was off.
 
 ## Development
 
@@ -111,6 +174,10 @@ src/school_job_scraper/
   notify/        SMTP and console delivery
 tests/
   fixtures/      real API payloads captured 2026-10-16
+deploy/
+  *.service      systemd unit, templated by the installer
+  *.timer        the daily schedule
+  install.sh     renders, installs and enables both
 ```
 
 ### Notes for whoever maintains this
