@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# Formatting, typing and tests must pass before a commit is recorded.
+# Enabled by `git config core.hooksPath .githooks` (see `make install`).
+# Bypass deliberately with `git commit --no-verify`.
+set -uo pipefail
+
+cd "$(git rev-parse --show-toplevel)" || exit 1
+
+PY=${PYTHON:-python3}
+status=0
+
+run() {
+	local label=$1
+	shift
+	printf '  %-22s' "$label"
+	if output=$("$@" 2>&1); then
+		printf 'ok\n'
+	else
+		printf 'FAILED\n'
+		printf '%s\n' "$output" | sed 's/^/    /'
+		status=1
+	fi
+}
+
+echo "pre-commit checks"
+run "black --check" "$PY" -m black --check src tests
+run "mypy (strict)" "$PY" -m mypy
+run "pytest" "$PY" -m pytest -q
+
+if [ "$status" -ne 0 ]; then
+	echo
+	echo "Commit blocked. Run 'make format' to fix formatting, then re-stage."
+fi
+exit "$status"

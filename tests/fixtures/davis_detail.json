@@ -1,0 +1,23 @@
+{
+  "Data": {
+    "id": 28629,
+    "referenceNbr": "ASST GIRLS BBALL SYRACUSE JR",
+    "title": "Assistant Basketball Coach-Girls",
+    "description": "The following position is available at Syracuse Junior High:\n\nASSISTANT GIRLS BASKETBALL COACH\n\nLooking for an individual with basketball and coaching experience. \n\nFor questions regarding the position, please contact Syracuse Junior High at 801-402-6800.",
+    "category": "CLASSIFIED",
+    "location": "Syracuse Jr High",
+    "summary": null,
+    "licensedEducatorMsg": null,
+    "openDate": "2026-09-02T00:00:00-06:00",
+    "closeDate": null,
+    "qualifications": [],
+    "inHouse": false,
+    "isMultiple": false,
+    "applicationId": null,
+    "isPublished": true
+  },
+  "IsValid": true,
+  "ErrorMessages": [],
+  "SuccessMessages": [],
+  "RedirectUrl": null
+}

@@ -1,0 +1,109 @@
+{
+  "success": true,
+  "message": "",
+  "validationErrors": [],
+  "value": {
+    "page": 1,
+    "size": 200,
+    "jobsList": [
+      {
+        "jobId": 5960824,
+        "employer": "Weber Innovation High School",
+        "title": "[INT] Weber Innovation High - Registrar/Aide (30467)",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-14T06:00:00"
+      },
+      {
+        "jobId": 5960813,
+        "employer": "North Park Elementary",
+        "title": "North Park Elementary - PT Mild/Moderate SpEd Paraprofessional (30499)",
+        "location": "Roy, Utah",
+        "displayDate": "2026-10-14T06:00:00"
+      },
+      {
+        "jobId": 5960810,
+        "employer": "Uintah Elementary",
+        "title": "Uintah Elementary - PT Life Skills SpEd Paraprofessional (30480)",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-14T06:00:00"
+      },
+      {
+        "jobId": 5960808,
+        "employer": "North Ogden Junior High",
+        "title": "North Ogden Jr High - Social-Emotional Learning (SEL) SpEd Paraprofessional (30488)",
+        "location": "North Ogden, Utah",
+        "displayDate": "2026-10-14T06:00:00"
+      },
+      {
+        "jobId": 5960807,
+        "employer": "South Ogden Junior High",
+        "title": "South Ogden Jr High - Social-Emotional Learning (SEL) SpEd Paraprofessional (30473)",
+        "location": "South Ogden, Utah",
+        "displayDate": "2026-10-14T06:00:00"
+      },
+      {
+        "jobId": 5960803,
+        "employer": "Canyon View",
+        "title": "Canyon View - PT Preschool SpEd Student Paraprofessional (Internship) (30451)",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-14T06:00:00"
+      },
+      {
+        "jobId": 5960799,
+        "employer": "Silver Ridge Elementary",
+        "title": "Silver Ridge Elementary - PT Elementary Aide (30500)",
+        "location": "Farr West, Utah",
+        "displayDate": "2026-10-14T06:00:00"
+      },
+      {
+        "jobId": 5960796,
+        "employer": "West Haven Elementary",
+        "title": "West Haven Elementary - PT Elementary Aide (30460)",
+        "location": "West Haven, Utah",
+        "displayDate": "2026-10-14T06:00:00"
+      },
+      {
+        "jobId": 5958993,
+        "employer": "Kanesville Elementary",
+        "title": "Kanesville Elementary - Kindergarten Teacher (30486) [Temporary]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-13T06:00:00"
+      },
+      {
+        "jobId": 5954082,
+        "employer": "Weber SD TalentEd",
+        "title": "Maintenance - Commercial Door and Hardware Installer Maintenance Assistant (30440)",
+        "location": "West Haven, Utah",
+        "displayDate": "2026-10-13T06:00:00"
+      },
+      {
+        "jobId": 5939573,
+        "employer": "Weber SD TalentEd",
+        "title": "Maintenance - Maintenance Laborer (Carpentry) (30353)",
+        "location": "West Haven, Utah",
+        "displayDate": "2026-10-13T06:00:00"
+      },
+      {
+        "jobId": 5939361,
+        "employer": "Weber SD TalentEd",
+        "title": "Maintenance - Electrician (30352)",
+        "location": "West Haven, Utah",
+        "displayDate": "2026-10-13T06:00:00"
+      },
+      {
+        "jobId": 5957686,
+        "employer": "Roy High School",
+        "title": "Roy High School - PT Secondary Aide (Student Advocate) (30472)",
+        "location": "Roy, Utah",
+        "displayDate": "2026-10-12T06:00:00"
+      },
+      {
+        "jobId": 5943072,
+        "employer": "West Haven Elementary",
+        "title": "West Haven Elementary - PT Elementary Aide (30361)",
+        "location": "West Haven, Utah",
+        "displayDate": "2026-10-12T06:00:00"
+      }
+    ]
+  }
+}

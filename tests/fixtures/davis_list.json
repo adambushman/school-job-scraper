@@ -1,0 +1,457 @@
+{
+  "total": 57,
+  "page": 1,
+  "pageSize": 50,
+  "announcements": [
+    {
+      "id": 28629,
+      "title": "Assistant Basketball Coach-Girls",
+      "category": "CLASSIFIED",
+      "location": "Syracuse Jr High",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28636,
+      "title": "Assistant Lacrosse Coach-Girls",
+      "category": "CLASSIFIED",
+      "location": "Syracuse High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 27065,
+      "title": "Assistant Track Coach",
+      "category": "CLASSIFIED",
+      "location": "Fairfield Jr High",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28126,
+      "title": "Assistant Volleyball Coach",
+      "category": "CLASSIFIED",
+      "location": "Northridge High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28507,
+      "title": "Assistant Volleyball Coach",
+      "category": "CLASSIFIED",
+      "location": "Fairfield Jr High",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28277,
+      "title": "Assistant Volleyball Coach-Girls",
+      "category": "CLASSIFIED",
+      "location": "Bountiful High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28535,
+      "title": "Building Controls Operator",
+      "category": "CLASSIFIED",
+      "location": "Maintenance Dept",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 21842,
+      "title": "Clinical Instructor",
+      "category": "CLASSIFIED",
+      "location": "Career And Technical Education",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28783,
+      "title": "Computer Lab Specialist",
+      "category": "CLASSIFIED",
+      "location": "King Elementary",
+      "closingDate": "2026-10-21T00:00:00-06:00",
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28700,
+      "title": "Computer Lab Specialist-STEM Prep",
+      "category": "CLASSIFIED",
+      "location": "So Clearfield Elementary",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 27115,
+      "title": "Custodial Intern Program",
+      "category": "CLASSIFIED",
+      "location": "Custodial Services",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 27333,
+      "title": "Electrician - Emergency Power Generation",
+      "category": "CLASSIFIED",
+      "location": "Maintenance Dept",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28624,
+      "title": "Energy/Security Tech",
+      "category": "CLASSIFIED",
+      "location": "Maintenance Dept",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28642,
+      "title": "ESL Tutor",
+      "category": "CLASSIFIED",
+      "location": "So Clearfield Elementary",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28652,
+      "title": "Head Basketball Coach-Sophomore Boys",
+      "category": "CLASSIFIED",
+      "location": "Woods Cross High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 26339,
+      "title": "Head Lacrosse Coach-Girls",
+      "category": "CLASSIFIED",
+      "location": "Northridge High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28136,
+      "title": "Head Lacrosse Coach-Girls",
+      "category": "CLASSIFIED",
+      "location": "Syracuse High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28556,
+      "title": "Head Softball Coach",
+      "category": "CLASSIFIED",
+      "location": "Farmington High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28788,
+      "title": "Head Swim Coach",
+      "category": "CLASSIFIED",
+      "location": "Clearfield High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28764,
+      "title": "Head Swim Coach",
+      "category": "CLASSIFIED",
+      "location": "Woods Cross High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 27322,
+      "title": "Head Wrestling Coach",
+      "category": "CLASSIFIED",
+      "location": "Bountiful High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 24973,
+      "title": "Head Wrestling Coach-Girls",
+      "category": "CLASSIFIED",
+      "location": "Syracuse High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28248,
+      "title": "Head Wrestling Coach-Girls",
+      "category": "CLASSIFIED",
+      "location": "Woods Cross High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28092,
+      "title": "Literacy Coach (Part-Time)",
+      "category": "LICENSED EDUCATOR",
+      "location": "Teaching And Learning Dept",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28785,
+      "title": "Office Assistant-Recess and Lunchroom Support",
+      "category": "CLASSIFIED",
+      "location": "Canyon Creek Elementary",
+      "closingDate": "2026-10-21T00:00:00-06:00",
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28756,
+      "title": "Office Assistant-Team Recess Aide",
+      "category": "CLASSIFIED",
+      "location": "So Clearfield Elementary",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28776,
+      "title": "Part Time Custodian",
+      "category": "CLASSIFIED",
+      "location": "Woods Cross High School",
+      "closingDate": "2026-10-19T00:00:00-06:00",
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28775,
+      "title": "Part Time Custodian",
+      "category": "CLASSIFIED",
+      "location": "Adelaide Elementary",
+      "closingDate": "2026-10-19T00:00:00-06:00",
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28789,
+      "title": "Part Time Custodian",
+      "category": "CLASSIFIED",
+      "location": "East Layton Elementary",
+      "closingDate": "2026-10-22T00:00:00-06:00",
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28658,
+      "title": "Part Time Custodian",
+      "category": "CLASSIFIED",
+      "location": "Renaissance Academy",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28702,
+      "title": "Part Time Custodian",
+      "category": "CLASSIFIED",
+      "location": "Central Davis Jr High",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28622,
+      "title": "Part Time Custodian",
+      "category": "CLASSIFIED",
+      "location": "Snow Horse Elementary",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28682,
+      "title": "Part Time Custodian",
+      "category": "CLASSIFIED",
+      "location": "Crestview Elementary",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28471,
+      "title": "Registered Behavior Technician",
+      "category": "CLASSIFIED",
+      "location": "Dept Of Student Services",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28598,
+      "title": "Special Education Teacher",
+      "category": "LICENSED EDUCATOR",
+      "location": "Special Education",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 4310,
+      "title": "Substitute Bus Assistant",
+      "category": "SUBSTITUTE",
+      "location": "Davis School District",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 4311,
+      "title": "Substitute Bus Drivers",
+      "category": "SUBSTITUTE",
+      "location": "Davis School District",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 4538,
+      "title": "Substitute Cooks",
+      "category": "SUBSTITUTE",
+      "location": "Davis School District",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 4539,
+      "title": "Substitute Custodians",
+      "category": "SUBSTITUTE",
+      "location": "Custodial Services",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28782,
+      "title": "Teacher Assistant",
+      "category": "CLASSIFIED",
+      "location": "Burton Elementary",
+      "closingDate": "2026-10-21T00:00:00-06:00",
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28728,
+      "title": "TEACHER ASSISTANT - McKinney-Vento Program",
+      "category": "CLASSIFIED",
+      "location": "Federal Programs",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28779,
+      "title": "Teacher Assistant - Special Education",
+      "category": "CLASSIFIED",
+      "location": "Adams Elementary",
+      "closingDate": "2026-10-21T00:00:00-06:00",
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28790,
+      "title": "Teacher Assistant - Special Education",
+      "category": "CLASSIFIED",
+      "location": "Sunset Jr High",
+      "closingDate": "2026-10-22T00:00:00-06:00",
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28793,
+      "title": "Teacher Assistant - Special Education",
+      "category": "CLASSIFIED",
+      "location": "Centerville Elementary",
+      "closingDate": "2026-10-22T00:00:00-06:00",
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28791,
+      "title": "Teacher Assistant - Special Education",
+      "category": "CLASSIFIED",
+      "location": "Hill Field Elementary",
+      "closingDate": "2026-10-22T00:00:00-06:00",
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28588,
+      "title": "Teacher Assistant - Special Education",
+      "category": "CLASSIFIED",
+      "location": "Wasatch Elementary",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28532,
+      "title": "Teacher Assistant - Special Education",
+      "category": "CLASSIFIED",
+      "location": "Fairfield Jr High",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28589,
+      "title": "Teacher Assistant - Special Education",
+      "category": "CLASSIFIED",
+      "location": "Farmington High School",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 27669,
+      "title": "Teacher Assistant - Special Education (Post High School)",
+      "category": "CLASSIFIED",
+      "location": "Vista Education Campus",
+      "closingDate": null,
+      "count": 0,
+      "inHouse": false
+    },
+    {
+      "id": 28781,
+      "title": "Teacher Assistant-Kindergarten Aide",
+      "category": "CLASSIFIED",
+      "location": "Adelaide Elementary",
+      "closingDate": "2026-10-21T00:00:00-06:00",
+      "count": 0,
+      "inHouse": false
+    }
+  ]
+}

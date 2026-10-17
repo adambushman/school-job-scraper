@@ -1,0 +1,123 @@
+{
+  "success": true,
+  "message": "",
+  "validationErrors": [],
+  "value": {
+    "page": 1,
+    "size": 200,
+    "jobsList": [
+      {
+        "jobId": 5960278,
+        "employer": "Lincoln Elementary",
+        "title": "Elementary Special Education Complex Support Needs [LIC3084]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-14T06:00:00"
+      },
+      {
+        "jobId": 5838404,
+        "employer": "Ogden School District (District Wide)",
+        "title": "District Elementary Literacy Intervention Support Lead [ESP3618]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-14T06:00:00"
+      },
+      {
+        "jobId": 5943699,
+        "employer": "Ogden High School",
+        "title": "Classroom Staff Assistant [ESP3905]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-12T06:00:00"
+      },
+      {
+        "jobId": 5955374,
+        "employer": "OGDEN SCHOOL DISTRICT",
+        "title": "Special Education Complex Support Needs -  Postsecondary Transition [ESP3916]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-08T06:00:00"
+      },
+      {
+        "jobId": 5955346,
+        "employer": "Ogden School District (District Wide)",
+        "title": "Student Stage Crew [ESP9999]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-08T06:00:00"
+      },
+      {
+        "jobId": 5953434,
+        "employer": "Liberty Elementary",
+        "title": "Behavioral/Instructional Staff Assistant [ESP3915]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-07T06:00:00"
+      },
+      {
+        "jobId": 5948818,
+        "employer": "Bridges/Alternative Placement",
+        "title": "Special Education Behavior Staff Assistant [ESP3908]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-02T06:00:00"
+      },
+      {
+        "jobId": 5937650,
+        "employer": "Ogden School District (District Wide)",
+        "title": "Elementary Special Education Complex Support Needs Teacher  [LIC3082]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-02T06:00:00"
+      },
+      {
+        "jobId": 5866386,
+        "employer": "Special Education",
+        "title": "Speech Language Pathologist [LIC3073]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-02T06:00:00"
+      },
+      {
+        "jobId": 5866380,
+        "employer": "OGDEN SCHOOL DISTRICT",
+        "title": "Special Education Behavior Specialist [LIC3072]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-10-02T06:00:00"
+      },
+      {
+        "jobId": 5940825,
+        "employer": "Bridges/Alternative Placement",
+        "title": "Special Education Behavior Technician [ESP3703]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-09-25T06:00:00"
+      },
+      {
+        "jobId": 5907790,
+        "employer": "Liberty Elementary",
+        "title": "Early Literacy Staff Assistant [ESP3677]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-09-15T06:00:00"
+      },
+      {
+        "jobId": 5300082,
+        "employer": "OGDEN SCHOOL DISTRICT",
+        "title": "Special Education Complex Support Needs Staff Assistant [ESP3341]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-09-04T06:00:00"
+      },
+      {
+        "jobId": 5907775,
+        "employer": "Heritage Elementary",
+        "title": "Special Education Behavior Staff Assistant [ESP3675]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-08-28T06:00:00"
+      },
+      {
+        "jobId": 4938621,
+        "employer": "Ben Lomond &amp; Ogden High Pools",
+        "title": "Lifeguard [ESP08]",
+        "location": "Ogden, Utah",
+        "displayDate": "2026-08-28T06:00:00"
+      },
+      {
+        "jobId": 5415602,
+        "employer": "Student Custodians (District Wide)",
+        "title": "Student Custodian [ESP005]",
+        "location": "Ogden, Utah",
+        "displayDate": "2025-10-16T06:00:00"
+      }
+    ]
+  }
+}
